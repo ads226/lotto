@@ -10,9 +10,14 @@ window.onload = function() {
 	filterContainer = [
 		new FilterAll()
 		, new FilterOdd()
+		, new FilterContinue(1)
+		, new FilterContinue(2)
+		, new FilterContinue(3)
+		, new FilterSum()
+		
 		, new FilterRepeat(1)
 //		, new FilterRepeat(2)
-		, new FilterRepeat(10)
+//		, new FilterRepeat(10)
 	];
 	
 	for (var i = 0, len = filterContainer.length; i < len; ++ i) {
@@ -28,6 +33,8 @@ window.onload = function() {
 	
 	
 	console.timeEnd("[Time to] ++++++++++ Page load completed");
+	
+	onClickCreate();
 }
 
 
@@ -142,8 +149,41 @@ function clearPradictTable() {
 	
 }
 
+
 function onClickCreate() {
-	var pradict = lottoData[Math.round(lottoData.length * Math.random())]
+//	var pradict = lottoData[Math.round(lottoData.length * Math.random())];
+	
+	var clone = lottoData.slice(0),
+		temp = [];
+	
+	for (var i = 0, len1 = filterContainer.length; i < len1; ++ i) {
+		if (filterContainer[i]._conds.length > 0) {
+			
+			var sum = filterContainer[i]._aData.sum();
+			
+			for (var j = 0, len2 = filterContainer[i]._conds.length; j < len2; ++ j) {
+				
+				if (filterContainer[i]._container.check[j]) {
+					
+//					var per = filterContainer[i]._aData[j] / sum;
+					var per = 0.8;
+					
+					for (var k = 0, len3 = clone.length; k < len3; ++ k) {
+						if (Math.random() <= per) {
+							temp.push(clone[k]);
+						}
+					}
+					
+					clone = temp.slice(0);
+					temp = [];
+				}
+			}
+		}
+	}
+	
+	console.log(clone.length)
+	var pradict = clone[Math.round(clone.length * Math.random())];
+	
 	addPradictLine(pradict);
 }
 

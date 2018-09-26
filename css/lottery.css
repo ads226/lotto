@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&subset=korean');
+
+* { margin: 0; border: 0; padding: 0; }
+* { font-family: 'Nanum Gothic', sans-serif; }
+* { font-size: 10pt; color: #606060; }
+
+body { background-color: #f4f4f4; }
+
+.head_wrap {
+	width: calc(1100px - 20px * 2);
+	padding: 20px 20px 10px;
+	margin: 50px auto 0px;
+	background-color: #fff;
+	display: flex;
+}
+
+.head_tab {
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	
+	margin-right: -1px;
+	border: 1px solid #d6d6d6;
+	color: #9d9d9d;
+}
+
+.head_tab_normal:hover {
+	background-color: #57beff;
+	border-color: #57beff;
+	color: #fff;
+	cursor: pointer;
+	z-index: 100;
+}
+
+.head_tab_selected {
+	background-color: #426174;
+	border-color: #426174;
+	color: #fff;
+	font-weight: 700;
+	z-index: 10;
+}
+

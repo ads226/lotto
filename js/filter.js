@@ -14,6 +14,8 @@ function Filter() {
 			if (i < 50) this._fData[res] ++;
 			if (i < 10) this._tData[res] ++;
 		}
+		
+		if (this._initSelf) this._initSelf();
 	}
 	
 	this._refresh = function() {
@@ -284,7 +286,6 @@ FilterAll.prototype = Filter.prototype;
 FilterAll.prototype.constructor = Filter;
 
 
-
 function FilterOdd() {
 	this._title = "출현 번호의 홀:짝 비율";
 	this._conds = ["0 : 6","1 : 5","2 : 4","3 : 3","4 : 2","5 : 1","6 : 0"];
@@ -304,6 +305,71 @@ function FilterOdd() {
 FilterOdd.prototype = Filter.prototype;
 FilterOdd.prototype.constructor = Filter;
 
+
+function FilterContinue(num) {
+	this._title = "앞, 뒤 번호의 간격이 " + num + "인 번호의 출현 수";
+	this._conds = ["0회", "1회", "2회", "3회", "4회", "5회"];
+	
+	Filter.apply(this);
+	
+	this._calc = function(lotto) {
+		var res = 0,
+			i = 0,
+			len = lotto.length - 1;
+		
+		for (; i < len; ++ i) {
+			if (lotto[i + 1] - lotto[i] === num) res ++;
+		}
+		
+		return res;
+	}
+}
+FilterContinue.prototype = Filter.prototype;
+FilterContinue.prototype.constructor = Filter;
+
+
+
+function FilterSum() {
+	this._title = "출현 번호의 합";
+	this._conds = ["1 ~ 20", "21 ~ 40", "41 ~ 60", "61 ~ 80", "81 ~ 100", "101 ~ 120", "121 ~ 140", "141 ~ 160", "161 ~ 180", "181 ~ 200", "201 ~ 220", "221 ~ 240", "241 ~ 260"];
+	
+	Filter.apply(this);
+	
+	this._calc = function(lotto) {
+		return Math.floor((lotto.sum() - 1) / 20);
+	}
+}
+FilterSum.prototype = Filter.prototype;
+FilterSum.prototype.constructor = Filter;
+
+
+
+function FilterUnseen(num) {
+	this._title = "이전 " + num + "회 동안 미출현 번호의 출현 수";
+	this._conds = ["0개", "1개", "2개", "3개", "4개", "5개", "6개"];
+	this._num = num || 1;
+	
+	Filter.apply(this);
+	
+	var temp = []
+	
+	this._calc = function(lotto) {
+		var res = 0,
+			i = 0,
+			len = lotto.length;
+		
+		for (var j = 1; j < this._num; ++ i) {
+			
+			var target = getLotteryOfTurn(currentLottery.turn + j).lotto;
+		}
+	}
+	
+	this._initSelf = function() {
+		
+	}
+}
+FilterUnseen.prototype = Filter.prototype;
+FilterUnseen.prototype.constructor = Filter;
 
 
 function FilterRepeat(num) {
@@ -358,7 +424,6 @@ function FilterRepeat(num) {
 }
 FilterRepeat.prototype = Filter.prototype;
 FilterRepeat.prototype.constructor = Filter;
-
 
 
 
