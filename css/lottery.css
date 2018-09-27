@@ -5,19 +5,35 @@
 * { font-size: 10pt; color: #606060; }
 
 body { background-color: #f4f4f4; }
+table { width: 100%; border-collapse: collapse; }
+td { border: thin solid #dddddd; }
+
+thead {
+	text-align: center;
+	background-color: aliceblue;
+}
+
+thead td {
+	height: 30px;
+}
+
+input {
+	vertical-align: middle;
+}
+
 
 .head_wrap {
 	width: calc(1100px - 20px * 2);
 	padding: 20px 20px 10px;
-	margin: 50px auto 0px;
+	margin: 50px auto 0;
 	background-color: #fff;
 	display: flex;
 }
 
 .head_tab {
 	width: 120px;
-	height: 30px;
-	line-height: 30px;
+	height: 40px;
+	line-height: 40px;
 	text-align: center;
 	
 	margin-right: -1px;
@@ -40,4 +56,118 @@ body { background-color: #f4f4f4; }
 	font-weight: 700;
 	z-index: 10;
 }
+
+
+
+
+
+
+.body_wrap {
+	width: calc(1100px - 20px * 2);
+	padding: 10px 20px 20px;
+	margin: 0 auto 50px;
+	background-color: #fff;
+}
+
+.option_wrap {
+	line-height: 30px;
+	text-align: right;
+}
+
+.td_turn {
+	width: 5%;
+	text-align: center;
+}
+
+.td_data {
+	width: 10%;
+	text-align: center;
+}
+
+.td_num {
+	width: 20%;
+	padding: 2px 4px;
+}
+
+.td_rank {
+	width: 13%;
+	text-align: right;
+	padding: 2px 4px;
+}
+
+.td_num_all {
+	width: 95%;
+	padding: 2px 2px;
+}
+
+.rank_person,
+.rank_prize,
+.rank_total{
+	font-size: 9pt;
+	line-height: 16px;
+}
+
+.td_num_mark {
+	width: 10%;
+	padding: 1px;
+	
+}
+
+
+
+.rank_prize {
+	font-weight: 700;
+}
+
+.num_wrap {
+	display: flex;
+	justify-content: space-between;
+}
+
+.num_ball {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 7pt;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	background-color: #ebebeb;
+	border-radius: 100px;
+}
+
+.num_div {
+	height: 20px;
+	line-height: 20px;
+	font-size: 9pt;
+	text-align: center;
+}
+
+.mark_wrap {
+	width: 98px;
+	margin: 0 auto;
+	overflow: hidden;
+	
+}
+
+.num_mark {
+	float: left;
+	font-size: 7pt;
+	width: 12px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: #bebfbf;
+	background-color: #ebebeb;
+	border-radius: 100px;
+	margin: 4px 1px;
+}
+
+.num_marked {
+	color: #ededed;
+	background-color: #585858;
+}
+
+
+
 
