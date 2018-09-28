@@ -6,6 +6,7 @@
 
 body { background-color: #f4f4f4; }
 table { width: 100%; border-collapse: collapse; }
+table { border: thin solid #dddddd; }
 td { border: thin solid #dddddd; }
 
 thead {
@@ -113,6 +114,14 @@ input {
 	
 }
 
+.td_drop {
+	width: calc((100% - 5%) / 45);
+	height: 20px;
+	border-top: 0;
+	border-bottom: 0;
+}
+
+
 
 
 .rank_prize {
@@ -169,5 +178,29 @@ input {
 }
 
 
+.drop_wrap {
+	width: 16px;
+	font-size: 8pt;
+	text-align: center;
+	color: #bebfbf;
+	background-color: #ebebeb;
+	margin: 0 auto;
+}
 
+.drop_end {
+	margin-top: 6px;
+	height: 18px;
+	line-height: 12px;
+	color: #606060;
+}
 
+.drop_ing {
+	height: 24px;
+	line-height: 24px;
+}
+
+.drop_sta {
+	margin-bottom: 4px;
+	height: 20px;
+	line-height: 24px;
+}
