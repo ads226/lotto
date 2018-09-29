@@ -8,19 +8,15 @@ body { background-color: #f4f4f4; }
 table { width: 100%; border-collapse: collapse; }
 table { border: thin solid #dddddd; }
 td { border: thin solid #dddddd; }
+td { font-size: 9pt; }
 
-thead {
-	text-align: center;
-	background-color: aliceblue;
-}
+thead { text-align: center; }
+thead {	background-color: aliceblue; }
 
-thead td {
-	height: 30px;
-}
+thead td { height: 24px; }
+input { vertical-align: middle; }
 
-input {
-	vertical-align: middle;
-}
+
 
 
 .head_wrap {
@@ -61,8 +57,6 @@ input {
 
 
 
-
-
 .body_wrap {
 	width: calc(1100px - 20px * 2);
 	padding: 10px 20px 20px;
@@ -75,69 +69,54 @@ input {
 	text-align: right;
 }
 
-.td_turn {
-	width: 5%;
+.td_lottery_turn {
+	width: 4%;
 	text-align: center;
 }
 
-.td_data {
-	width: 10%;
+.td_lottery_date {
+	width: 8%;
 	text-align: center;
 }
 
-.td_num {
-	width: 20%;
-	padding: 2px 4px;
+.td_lottery_num {
+	width: 32%;
 }
 
-.td_rank {
-	width: 13%;
-	text-align: right;
-	padding: 2px 4px;
-}
-
-.td_num_all {
-	width: 95%;
-	padding: 2px 2px;
-}
-
-.rank_person,
-.rank_prize,
-.rank_total{
-	font-size: 9pt;
-	line-height: 16px;
-}
-
-.td_num_mark {
-	width: 10%;
-	padding: 1px;
-	
-}
-
-.td_drop {
-	width: calc((100% - 5%) / 45);
-	height: 20px;
-	border-top: 0;
-	border-bottom: 0;
-}
-
-
-
-
-.rank_prize {
+.td_rank_1 {
+	width: 15%;
+	font-size: 10pt;
 	font-weight: 700;
 }
 
-.num_wrap {
+.td_rank_2 {
+	width: 13%;
+}
+
+.td_rank_3 {
+	width: 11%;
+}
+
+.td_rank_4 {
+	width: 9%;
+}
+
+.td_rank_5 {
+	width: 8%;
+}
+
+.td_lottery_rank {
+	text-align: right;
+	padding: 0 10px;
+}
+
+.num_ball_wrap {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+	padding: 3px 4px;
 }
 
 .num_ball {
-	width: 20px;
-	height: 20px;
-	line-height: 20px;
-	font-size: 7pt;
 	font-weight: 700;
 	color: #fff;
 	text-align: center;
@@ -145,31 +124,60 @@ input {
 	border-radius: 100px;
 }
 
-.num_div {
-	height: 20px;
-	line-height: 20px;
-	font-size: 9pt;
-	text-align: center;
+.num_lottery {
+	width: 28px;
+	line-height: 28px;
+	font-size: 12pt;
 }
 
-.mark_wrap {
+.num_div {
+	line-height: 28px;
+}
+
+.num_o { background-color: #f7ba4a; }
+.num_b { background-color: #8080ff; }
+.num_r { background-color: #ff6d6d; }
+.num_k { background-color: #535353; }
+.num_g { background-color: #55a055; }
+
+
+
+
+.td_num_all {
+	width: 96%;
+}
+
+.num_all {
+	width: 20px;
+	line-height: 20px;
+	font-size: 8pt;
+}
+
+
+
+
+.td_num_mark {
+	width: 10%;
+	padding: 4px 2px;
+}
+
+.num_mark_wrap {
 	width: 98px;
 	margin: 0 auto;
 	overflow: hidden;
-	
 }
 
 .num_mark {
 	float: left;
 	font-size: 7pt;
 	width: 12px;
-	height: 20px;
-	line-height: 20px;
+	height: 22px;
+	line-height: 22px;
 	text-align: center;
 	color: #bebfbf;
 	background-color: #ebebeb;
 	border-radius: 100px;
-	margin: 4px 1px;
+	margin: 2px 1px;
 }
 
 .num_marked {
@@ -177,6 +185,12 @@ input {
 	background-color: #585858;
 }
 
+
+
+.td_drop {
+	width: calc((100% - 4%) / 45);
+	height: 20px;
+}
 
 .drop_wrap {
 	width: 16px;
@@ -188,19 +202,29 @@ input {
 }
 
 .drop_end {
-	margin-top: 6px;
-	height: 18px;
-	line-height: 12px;
+	margin-top: 4px;
+	height: 20px;
+	line-height: 16px;
 	color: #606060;
 }
 
 .drop_ing {
 	height: 24px;
 	line-height: 24px;
+	color: #ebebeb;
 }
 
-.drop_sta {
-	margin-bottom: 4px;
-	height: 20px;
+.drop_start {
+	margin-bottom: 2px;
+	height: 22px;
 	line-height: 24px;
+	color: #ebebeb;
+}
+
+.drop_win {
+	line-height: 16px;
+	font-size: 9pt;
+	color: #e6145d;
+	background-color: #ffc2e8;
+	border-radius: 10px;
 }
