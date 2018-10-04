@@ -9,3 +9,10 @@ body { background-color: #f4f4f4; }
 
 table { width: 100%; border-collapse: collapse; }
 td { border: thin solid #dddddd; }
+
+thead { text-align: center; background-color: aliceblue; }
+thead td { height: 22px; }
+
+input { vertical-align: middle; }
+
+.outline { outline: thin solid blue; }
