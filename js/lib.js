@@ -16,7 +16,6 @@ Array.prototype.min = function() {
 
 
 function UI_Extention(element, wrap) {
-//	var isOpened = 1,	// 0: false, 1: true
 	var isOpened = (element.innerHTML === "+") ? 0 : 1,
 		wrap = wrap || element.parentElement.parentElement;
 	

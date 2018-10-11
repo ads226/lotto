@@ -1,7 +1,13 @@
-var exceptNum = 1;
+var exceptNum = 1,
+	filterContainer;
 
 window.onload = function() {
 	console.time("[Time to] ++++++++++ Page load completed");
+	
+	filterContainer = [
+		new FilterAll()
+	];
+	
 	
 	initFilterExtension();
 	initExceptNum();
