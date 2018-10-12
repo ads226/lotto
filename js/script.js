@@ -8,11 +8,18 @@ window.onload = function() {
 		res = new Array(20).fill(0);
 	
 	for (; i < len; ++ i) {
+		/*
+		var m = lottoData[i][3] - lottoData[i][2];
+		
+		res[Math.floor((m - 1) / 4)] ++;
+		*/
+		
 		var value = lottoData[i].reduce((acc, cur) => {
-			return acc + (Math.floor(cur / 10));
+			return acc + (cur % 10);
 		}, 0);
 		
-		res[Math.floor((value - 2) / 2)] ++;
+		res[Math.floor((value - 2) / 4)] ++;
+		
 	}
 	
 	console.log(res);
@@ -83,7 +90,16 @@ window.onload = function() {
 	console.timeEnd("[Time to] ++++++++++ Page load completed");
 }
 
-
+2100
+24960
+107620
+291680
+600820
+1020320
+1476580
+1816640
+1787700
+1016640
 
 
 function filterSum(data, min, max) {
